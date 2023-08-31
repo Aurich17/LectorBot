@@ -7,17 +7,25 @@ import { ChatComponent } from './chat/chat.component';
 // import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 // import { MatTabsModule } from '@angular/material';
+import { HeaderComponent } from './header/header.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 @NgModule({
-  declarations: [		
+  declarations: [			
     AppComponent,
       ChatComponent,
-      // LoginComponent
+     //LoginComponent,
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
 import { ChatInterface } from '../interfaces/chat.interface';
 // import * as LandBot from '@landbot/core';
+import {MatButtonModule} from '@angular/material/button';
 declare var Landbot: any;
 
 @Component({
@@ -12,20 +13,9 @@ declare var Landbot: any;
 
 export class ChatComponent implements OnInit {
 
-  ngOnInit(): void {
-    this.loadLandbotScript();
-  }
+  constructor(private elementRef: ElementRef) { }
 
-  loadLandbotScript() {
-    const s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.async = true;
-    s.addEventListener('load', () => {
-      const myLandbot = new Landbot({
-        configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-1700783-6E9XYWLGU90NABJK/index.json',
-      });
-    });
-    s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
-    document.head.appendChild(s);
-  }
+  ngOnInit(): void {
+    // Obtén los elementos del DOM
+  }  
 }
